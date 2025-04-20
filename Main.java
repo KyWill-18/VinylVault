@@ -23,24 +23,24 @@ public class Main{
             }
 
             else if (userChoice.equals("1")){
-                System.out.println("Loading Your Want List...");
-                viewWant();
+                System.out.println("Viewing Your Want List...");
+                //viewWant();
             }
 
             else if (userChoice.equals("2")){
-                System.out.println("Loading Your Have List...");
-                viewHave();
+                System.out.println("Viewing Your Have List...");
+                //viewHave();
             }
 
             else if (userChoice.equals("3")){
-                System.out.println("Loading Your Favorite List...");
-                viewFav();
+                System.out.println("Viewing Your Favorite List...");
+                //viewFav();
             }
 
             else if (userChoice.equals("4")){
                 System.out.println("Adding Vinyl...");
                 System.out.println("");
-                System.out.println("What list would you like to add a vinyl to?")
+                System.out.println("What list would you like to add a vinyl to?");
                 System.out.println("");
                 System.out.println("1) Want List");
                 System.out.println("2) Have List");
@@ -48,12 +48,27 @@ public class Main{
 
                 String userList = input.nextLine();
 
-                if (userList.equals("1"));
+                if (userList.equals("1")){
+                    System.out.println("Want List Loading...");
+                }
+
+                else if (userList.equals("2")){
+                    System.out.println("Have List Loading...");
+                }
+
+                else if (userList.equals("3")){
+                    System.out.println("Favorites List Loading...");
+                }
+
+                else{
+                    System.out.println("INVALID INPUT!");
+
+                }
             }
 
             else if (userChoice.equals("5")){
                 System.out.println("Removing Vinyl...");
-                removeVinyl();
+                //removeVinyl();
             }
 
             else{
@@ -62,26 +77,6 @@ public class Main{
             }
 
         }
-    }
-
-    public static void viewWant(){
-        System.out.println("Want List:");
-    }
-
-    public static void viewHave(){
-        System.out.println("Have List:");
-    }
-
-    public static void viewFav(){
-        System.out.println("Favorites");
-    }
-
-    public static void addVinyl(){
-        System.out.println("Type in the information of your vinyl");
-    }
-
-    public static void removeVinyl(){
-        System.out.println("What is the title of the ")
     }
 
 }

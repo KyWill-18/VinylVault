@@ -1,11 +1,25 @@
 public class Vinyl {
-    private String name;
-    private String artist;
+    protected String title;
+    protected String artist;
 
-    public Vinyl(String name, String artist){
-        this.name = name;
-        this.artist = artist;
+    public void userVinyl(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the vinyls full title: ");
+        title = input.nextLine();
+
+        System.out.println("Enter the artist full name: ");
+        artist = input.nextLine();
     }
 
+    public String getTitle(){
+        return title;
+    }
 
+    public String getArtist(){
+        return artist;
+    }
+
+    public printVinyl(){
+        return title + "by" + artist;
+    } 
 }
