@@ -1,14 +1,18 @@
+import java.util.Scanner;
+
 public class Vinyl {
-    protected String title;
-    protected String artist;
+    private String title;
+    private String artist;
+    private String year;
+    private String genre;
+    private String status; 
 
-    public void userVinyl(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the vinyls full title: ");
-        title = input.nextLine();
-
-        System.out.println("Enter the artist full name: ");
-        artist = input.nextLine();
+    public Vinyl(String title, String artist, String year, String genre, String status){
+      this.title = title;
+      this.artist = artist;
+      this.year = year;
+      this.genre = genre;
+      this.status = status;
     }
 
     public String getTitle(){
@@ -19,7 +23,19 @@ public class Vinyl {
         return artist;
     }
 
-    public printVinyl(){
-        return title + "by" + artist;
+    public String getYear(){
+        return year;
+    }
+
+    public String getGenre(){
+        return genre;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+    public String printVinyl(){
+        return title + "by" + artist + "released" + year + "genre: " + genre;
     } 
 }

@@ -1,10 +1,16 @@
 import java.util.*;
-
+//user interface - displays menu, takes user input
 public class Main{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+        //collection of three list each vinyl will be sorted into
+        ArrayList<Vinyl> wantList = new ArrayList<>();
+        ArrayList<Vinyl> haveList = new ArrayList<>();
+        ArrayList<Vinyl> favList = new ArrayList<>();
         boolean keepGoing = true;
+
         while(keepGoing){
+            //welcome menu
             System.out.println("Welcome to Vinyl Vault! Your Personal Vinyl Tracker!");
             System.out.println("");
             System.out.println("What would you like to do?");
@@ -21,23 +27,30 @@ public class Main{
                 System.out.println("Goodbye!");
                 keepGoing = false;
             }
-
+            //for(Vinyl v : ****List) -> goes through and finds vinyl with that status and prints it out 
             else if (userChoice.equals("1")){
                 System.out.println("Viewing Your Want List...");
-                //viewWant();
+                for (Vinyl v : wantList){
+                    System.out.println(v);
+                }
             }
 
             else if (userChoice.equals("2")){
                 System.out.println("Viewing Your Have List...");
-                //viewHave();
+                for (Vinyl v : haveList){
+                    System.out.println(v);
+                }
             }
 
             else if (userChoice.equals("3")){
                 System.out.println("Viewing Your Favorite List...");
-                //viewFav();
+                for (Vinyl v : favList){
+                    System.out.println(v);
+                }
+                
             }
-
-            else if (userChoice.equals("4")){
+            //add vinyl -> let's user pick a list to add to 
+            else if (userAdd.equals("4")){
                 System.out.println("Adding Vinyl...");
                 System.out.println("");
                 System.out.println("What list would you like to add a vinyl to?");
@@ -46,17 +59,17 @@ public class Main{
                 System.out.println("2) Have List");
                 System.out.println("3) Favorites List");
 
-                String userList = input.nextLine();
+                String userAdd = input.nextLine();
 
-                if (userList.equals("1")){
+                if (userAdd.equals("1")){
                     System.out.println("Want List Loading...");
                 }
 
-                else if (userList.equals("2")){
+                else if (userAdd.equals("2")){
                     System.out.println("Have List Loading...");
                 }
 
-                else if (userList.equals("3")){
+                else if (userAdd.equals("3")){
                     System.out.println("Favorites List Loading...");
                 }
 
@@ -65,10 +78,33 @@ public class Main{
 
                 }
             }
-
-            else if (userChoice.equals("5")){
+            //remove vinyl -> let's user pick a list to add from (will remove ONLY from that list)
+            else if (userRemove.equals("5")){
                 System.out.println("Removing Vinyl...");
-                //removeVinyl();
+                System.out.println("");
+                System.out.println("What list would you like to remove a vinyl from?");
+                System.out.println("");
+                System.out.println("1) Want List");
+                System.out.println("2) Have List");
+                System.out.println("3) Favorites List");
+
+                String userRemove = input.nextLine();
+
+                if (userRemove.equals("1")){
+                    status = "want";
+                    System.out.println("Loading Want List...");
+                }
+                
+                else if (userRemove.equals("2")){
+                    status = "have";
+                    System.out.println("Loading Have List...");
+                }
+
+                else if (userRemove.equals("3")){
+                    status = "favorites";
+                    System.out.println("Loading Favorites List...");
+                }
+
             }
 
             else{
