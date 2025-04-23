@@ -17,6 +17,13 @@ Arraylists will be used for the three lists:
 -Have List
 -Favorites List
 
+Each vinyl will be given a specific status (have, want, favorite)
+To view a specific list the program will print out all the vinyls
+with the same status as that list.
+After talking with Andy I decided to remove the original Collection class I had
+Using getStatus is a lot easier and makes the code look clearer
+(learned how to get status from an arrayList and just more about arrayList in general so yeah pretty cool!)
+
 ```
 
 
