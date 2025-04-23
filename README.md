@@ -5,9 +5,14 @@
 
 ## Overview
 ```
-Vinyl Vault is a program that will allow the user to input and keep track of vinyls using different lists. What they have (Have List), what they want (Want List), and their current favorites (Favorites List).  There will be a user menu that will let the user choose which list they would like to view. There will also be an add and remove vinyl option, and they will be asked if from which list they would like to do that. This program will be for vinyl lovers who just want to keep track of their vinyls.
+Vinyl Vault is a program that will allow the user to input and keep track of vinyls using different lists.
+What they have (Have List), what they want (Want List), and their current favorites (Favorites List).
+There will be a user menu that will let the user choose which list they would like to view.
+There will also be an add and remove vinyl option, and they will be asked if from which list they would like to do that.
+This program will be for vinyl lovers who just want to keep track of their vinyls.
 
-This project will be in Java using object-oriented programming principles. Arraylists will be used for the three lists:
+This project will be in Java using object-oriented programming principles.
+Arraylists will be used for the three lists:
 -Want List
 -Have List
 -Favorites List
