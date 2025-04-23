@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Vinyl {
     private String title;
@@ -35,7 +34,8 @@ public class Vinyl {
         return status;
     }
 
-    public String printVinyl(){
-        return title + "by" + artist + "released" + year + "genre: " + genre;
+    @Override
+    public String toString(){
+        return title + " by " + artist + " Released: " + year + " Genre: " + genre;
     } 
 }

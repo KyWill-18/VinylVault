@@ -14,6 +14,7 @@ public class Main{
             System.out.println("Welcome to Vinyl Vault! Your Personal Vinyl Tracker!");
             System.out.println("");
             System.out.println("What would you like to do?");
+            System.out.println("");
             System.out.println("0) Exit");
             System.out.println("1) View Want List");
             System.out.println("2) View Have List");
@@ -50,7 +51,7 @@ public class Main{
                 
             }
             //add vinyl -> let's user pick a list to add to 
-            else if (userAdd.equals("4")){
+            else if (userChoice.equals("4")){
                 System.out.println("Adding Vinyl...");
                 System.out.println("");
                 System.out.println("What list would you like to add a vinyl to?");
@@ -60,26 +61,62 @@ public class Main{
                 System.out.println("3) Favorites List");
 
                 String userAdd = input.nextLine();
+                String status = "";
 
                 if (userAdd.equals("1")){
                     System.out.println("Want List Loading...");
+                    System.out.println("");
+                    status = "Want";
                 }
 
                 else if (userAdd.equals("2")){
                     System.out.println("Have List Loading...");
+                    System.out.println("");
+                    status = "Have";
                 }
 
                 else if (userAdd.equals("3")){
                     System.out.println("Favorites List Loading...");
+                    System.out.println("");
+                    status = "Favorite";
                 }
 
                 else{
                     System.out.println("INVALID INPUT!");
 
                 }
+
+                System.out.println("What is the title of the vinyl? ");
+                String title = input.nextLine();
+
+                System.out.println("What is the artist? ");
+                String artist = input.nextLine();
+
+                System.out.println("What year was it released? ");
+                String year = input.nextLine();
+
+                System.out.println("What is the genre? ");
+                String genre = input.nextLine();
+
+                Vinyl newVinyl = new Vinyl(title, artist, year, genre,status);
+
+                if (status.equals("Want")){
+                    wantList.add(newVinyl);
+                }
+
+                else if (status.equals("Have")){
+                    haveList.add(newVinyl);
+                }
+
+                else if (status.equals("Favorite")){ 
+                    favList.add(newVinyl);
+                }
+
+                System.out.println(title + " by " + artist + " has been added to your " + status + " list! ");
+
             }
             //remove vinyl -> let's user pick a list to add from (will remove ONLY from that list)
-            else if (userRemove.equals("5")){
+            else if (userChoice.equals("5")){
                 System.out.println("Removing Vinyl...");
                 System.out.println("");
                 System.out.println("What list would you like to remove a vinyl from?");
@@ -91,18 +128,21 @@ public class Main{
                 String userRemove = input.nextLine();
 
                 if (userRemove.equals("1")){
-                    status = "want";
+                    //status = "want";
                     System.out.println("Loading Want List...");
+                    System.out.println("");
                 }
                 
                 else if (userRemove.equals("2")){
-                    status = "have";
+                   //status = "have";
                     System.out.println("Loading Have List...");
+                    System.out.println("");
                 }
 
                 else if (userRemove.equals("3")){
-                    status = "favorites";
+                    //status = "favorites";
                     System.out.println("Loading Favorites List...");
+                    System.out.println("");
                 }
 
             }
