@@ -42,7 +42,7 @@ public class Main{
                     System.out.println(v);
                 }
             }
-
+            
             else if (userChoice.equals("3")){
                 System.out.println("Viewing Your Favorite List...");
                 for (Vinyl v : favList){
@@ -130,27 +130,32 @@ public class Main{
                 if (userRemove.equals("1")){
                     //status = "want";
                     System.out.println("Loading Want List...");
-                    System.out.println("");
+                    for (Vinyl v : wantList){
+                        System.out.println(v);
+                    }
                 }
                 
                 else if (userRemove.equals("2")){
                    //status = "have";
                     System.out.println("Loading Have List...");
-                    System.out.println("");
+                    for (Vinyl v : haveList){
+                        System.out.println(v);
+                    }
                 }
 
                 else if (userRemove.equals("3")){
                     //status = "favorites";
                     System.out.println("Loading Favorites List...");
-                    System.out.println("");
+                    for (Vinyl v : favList){
+                        System.out.println(v);
                 }
-
             }
-
+            
             else{
                 System.out.println("INVALID INPUT!");
                 keepGoing = false;
             }
+        }
 
         }
     }
