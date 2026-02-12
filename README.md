@@ -1,6 +1,5 @@
 
 # Vinyl Vault - Your Personal Vinyl Tracker
-# CS 121 Final Project
 
 
 ## Overview
@@ -8,7 +7,7 @@
 Vinyl Vault is a program that will allow the user to input and keep track of vinyls using different lists.
 What they have (Have List), what they want (Want List), and their current favorites (Favorites List).
 There will be a user menu that will let the user choose which list they would like to view.
-There will also be an add and remove vinyl option, and they will be asked if from which list they would like to do that.
+There will also be an add and remove vinyl option, and they will be asked which list they would like to do that for.
 This program will be for vinyl lovers who just want to keep track of their vinyls.
 
 This project will be in Java using object-oriented programming principles.
@@ -18,12 +17,12 @@ Arraylists will be used for the three lists:
 -Favorites List
 
 Each vinyl will be given a specific status (have, want, favorite)
-To view a specific list the program will print out all the vinyls
+To view a specific list, the program will print out all the vinyls
 with the same status as that list.
-After talking with Andy I decided to remove the original Collection class I had
+After talking with And,y I decided to remove the original Collection class I had
 Using getStatus is a lot easier and makes the code look clearer
 
-(learned how to get status from an arrayList and just more about arrayList in general so yeah pretty cool!)
+(learned how to get status from an arrayList and just more about arrayList in general, so yeah, pretty cool!)
 
 ```
 
