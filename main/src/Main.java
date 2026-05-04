@@ -32,22 +32,22 @@ public class Main{
 
             else if (userChoice.equals("1")){
                 System.out.println("Viewing Your Want List...");
-                for (Vinyl v : wantList){
-                    System.out.println(v);
+                for (int v = 0; v < wantList.size(); v++){
+                    System.out.println((v + 1) + ". " + wantList.get(v));
                 }
             }
 
             else if (userChoice.equals("2")){
                 System.out.println("Viewing Your Have List...");
-                for (Vinyl v : haveList){
-                    System.out.println(v);
+                for (int v = 0; v < haveList.size(); v++){
+                    System.out.println((v + 1) + ". " + haveList.get(v));
                 }
             }
             
             else if (userChoice.equals("3")){
                 System.out.println("Viewing Your Favorite List...");
-                for (Vinyl v : favList){
-                    System.out.println(v);
+                for (int v = 0; v < favList.size(); v++){
+                    System.out.println((v + 1) + ". " + favList.get(v));
                 }
                 
             }
@@ -132,7 +132,7 @@ public class Main{
                     //status = "want";
                     System.out.println("Loading Want List...");
                     for (Vinyl v : wantList){
-                        //System.out.println(v);
+                        System.out.println(v);
                     }
                 }
                 
@@ -140,7 +140,7 @@ public class Main{
                    //status = "have";
                     System.out.println("Loading Have List...");
                     for (Vinyl v : haveList){
-                        //System.out.println(v);
+                        System.out.println(v);
                     }
                 }
 
@@ -148,7 +148,7 @@ public class Main{
                     //status = "favorites";
                     System.out.println("Loading Favorites List...");
                     for (Vinyl v : favList){
-                        //System.out.println(v);
+                        System.out.println(v);
                 }
             }
             
