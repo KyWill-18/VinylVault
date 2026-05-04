@@ -132,7 +132,7 @@ public class Main{
                     //status = "want";
                     System.out.println("Loading Want List...");
                     for (Vinyl v : wantList){
-                        System.out.println(v);
+                        //System.out.println(v);
                     }
                 }
                 
@@ -140,7 +140,7 @@ public class Main{
                    //status = "have";
                     System.out.println("Loading Have List...");
                     for (Vinyl v : haveList){
-                        System.out.println(v);
+                        //System.out.println(v);
                     }
                 }
 
@@ -148,7 +148,7 @@ public class Main{
                     //status = "favorites";
                     System.out.println("Loading Favorites List...");
                     for (Vinyl v : favList){
-                        System.out.println(v);
+                        //System.out.println(v);
                 }
             }
             
