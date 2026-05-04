@@ -1,4 +1,5 @@
 import java.util.*;
+
 //user interface - displays menu, takes user input
 public class Main{
     public static void main(String[] args){
@@ -28,7 +29,7 @@ public class Main{
                 System.out.println("Goodbye!");
                 keepGoing = false;
             }
-            //for(Vinyl v : ****List) -> goes through and finds vinyl with that status and prints it out 
+
             else if (userChoice.equals("1")){
                 System.out.println("Viewing Your Want List...");
                 for (Vinyl v : wantList){
@@ -98,7 +99,7 @@ public class Main{
                 System.out.println("What is the genre? ");
                 String genre = input.nextLine();
 
-                Vinyl newVinyl = new Vinyl(title, artist, year, genre,status);
+                Vinyl newVinyl = new Vinyl(title, artist, year, genre, status);
 
                 if (status.equals("Want")){
                     wantList.add(newVinyl);
