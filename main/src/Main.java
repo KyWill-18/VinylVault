@@ -8,6 +8,14 @@ public class Main{
         ArrayList<Vinyl> wantList = new ArrayList<>();
         ArrayList<Vinyl> haveList = new ArrayList<>();
         ArrayList<Vinyl> favList = new ArrayList<>();
+
+        //Hardcoded for testing
+        wantList.add(new Vinyl("For Cryin' Out Loud!", "FINNEAS", "2024", "Alt", "Want"));
+        wantList.add(new Vinyl("Sunburn", "Dominic Fike", "2023", "Alt", "Want"));
+        haveList.add(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Have"));
+        haveList.add(new Vinyl("Swimming", "Mac Miller", "2018", "Rap", "Have"));
+        favList.add(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Fav"));
+        favList.add(new Vinyl("Blonde", "Frank Ocean", "2016", "Pop", "Fav"));
         boolean keepGoing = true;
 
         while(keepGoing){
@@ -129,27 +137,37 @@ public class Main{
                 String userRemove = input.nextLine();
 
                 if (userRemove.equals("1")){
-                    //status = "want";
                     System.out.println("Loading Want List...");
-                    for (Vinyl v : wantList){
-                        System.out.println(v);
+                    for (int v = 0; v < wantList.size(); v++){
+                        System.out.println((v + 1) + ". " + wantList.get(v));
                     }
+                    System.out.println("Input the number of the vinyl you would like to remove: ");
+                    Scanner remove = new Scanner(System.in);
+                    int v = remove.nextInt();
+                    wantList.remove(v - 1);
                 }
                 
                 else if (userRemove.equals("2")){
-                   //status = "have";
                     System.out.println("Loading Have List...");
-                    for (Vinyl v : haveList){
-                        System.out.println(v);
+                    for (int v = 0; v < haveList.size(); v++){
+                        System.out.println((v + 1) + ". " + haveList.get(v));
                     }
+                    System.out.println("Input the number of the vinyl you would like to remove: ");
+                    Scanner remove = new Scanner(System.in);
+                    int v = remove.nextInt();
+                    haveList.remove(v - 1);
+
                 }
 
                 else if (userRemove.equals("3")){
-                    //status = "favorites";
                     System.out.println("Loading Favorites List...");
-                    for (Vinyl v : favList){
-                        System.out.println(v);
+                    for (int v = 0; v < favList.size(); v++){
+                        System.out.println((v + 1) + ". " + favList.get(v));
                 }
+                    System.out.println("Input the number of the vinyl you would like to remove: ");
+                    Scanner remove = new Scanner(System.in);
+                    int v = remove.nextInt();
+                    favList.remove(v - 1);
             }
             
             else{
