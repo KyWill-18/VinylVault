@@ -170,8 +170,24 @@ public class Main{
                     }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
+
                     int v = remove.nextInt();
-                    haveList.remove(v - 1);
+                    Vinyl Removed = haveList.get(v - 1);
+
+                    System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
+                    String userConfirm = input.nextLine();
+
+                    if (userConfirm.equals("Y")){
+                        haveList.remove(v - 1);
+                        System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
+                    }
+
+                    else if (userConfirm.equals("N")){
+                        System.out.println("This vinyl will NOT be removed!");
+                    }
+
+                    else
+                        System.out.println("INVALID INPUT!");
 
                 }
 
@@ -182,8 +198,24 @@ public class Main{
                 }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
+
                     int v = remove.nextInt();
-                    favList.remove(v - 1);
+                    Vinyl Removed = favList.get(v - 1);
+
+                    System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
+                    String userConfirm = input.nextLine();
+
+                    if (userConfirm.equals("Y")){
+                        favList.remove(v - 1);
+                        System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
+                    }
+
+                    else if (userConfirm.equals("N")){
+                        System.out.println("This vinyl will NOT be removed!");
+                    }
+
+                    else
+                        System.out.println("INVALID INPUT!");
             }
             
             else{
