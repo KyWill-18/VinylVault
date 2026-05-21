@@ -55,6 +55,10 @@ public class Main{
                 for (int v = 0; v < haveList.size(); v++){
                     System.out.println((v + 1) + ". " + haveList.get(v));
                 }
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Press ENTER to return to the Main Menu...");
+
+                scanner.nextLine();
             }
             
             else if (userChoice.equals("3")){
@@ -62,9 +66,13 @@ public class Main{
                 for (int v = 0; v < favList.size(); v++){
                     System.out.println((v + 1) + ". " + favList.get(v));
                 }
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Press ENTER to return to the Main Menu...");
+
+                scanner.nextLine();
                 
             }
-            //add vinyl -> let's user pick a list to add to 
+            //add vinyl
             else if (userChoice.equals("4")){
                 System.out.println("Adding Vinyl...");
                 System.out.println("");
@@ -128,8 +136,9 @@ public class Main{
 
                 System.out.println(title + " by " + artist + " has been added to your " + status + " list! ");
 
+
             }
-            //remove vinyl -> let's user pick a list to add from (will remove ONLY from that list)
+            //remove vinyl
             else if (userChoice.equals("5")){
                 System.out.println("Removing Vinyl...");
                 System.out.println("");
