@@ -42,7 +42,12 @@ public class Main{
                 System.out.println("Viewing Your Want List...");
                 for (int v = 0; v < wantList.size(); v++){
                     System.out.println((v + 1) + ". " + wantList.get(v));
+
                 }
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Press ENTER to return to the Main Menu...");
+
+                scanner.nextLine();
             }
 
             else if (userChoice.equals("2")){
