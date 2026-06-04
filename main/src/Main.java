@@ -40,6 +40,14 @@ public class Main{
 
             else if (userChoice.equals("1")){
                 System.out.println("Viewing Your Want List...");
+
+                try{
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){
+                    Thread.currentThread().interrupt();
+                }
+
                 for (int v = 0; v < wantList.size(); v++){
                     System.out.println((v + 1) + ". " + wantList.get(v));
 
@@ -52,6 +60,14 @@ public class Main{
 
             else if (userChoice.equals("2")){
                 System.out.println("Viewing Your Have List...");
+
+                try{
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){
+                    Thread.currentThread().interrupt();
+                }
+
                 for (int v = 0; v < haveList.size(); v++){
                     System.out.println((v + 1) + ". " + haveList.get(v));
                 }
@@ -63,6 +79,14 @@ public class Main{
             
             else if (userChoice.equals("3")){
                 System.out.println("Viewing Your Favorite List...");
+
+                try{
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){
+                    Thread.currentThread().interrupt();
+                }
+
                 for (int v = 0; v < favList.size(); v++){
                     System.out.println((v + 1) + ". " + favList.get(v));
                 }
@@ -75,7 +99,14 @@ public class Main{
             //add vinyl
             else if (userChoice.equals("4")){
                 System.out.println("Adding Vinyl...");
-                System.out.println("");
+
+                try{
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){
+                    Thread.currentThread().interrupt();
+                }
+
                 System.out.println("What list would you like to add a vinyl to?");
                 System.out.println("");
                 System.out.println("1) Want List");
@@ -141,7 +172,14 @@ public class Main{
             //remove vinyl
             else if (userChoice.equals("5")){
                 System.out.println("Removing Vinyl...");
-                System.out.println("");
+
+                try{
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e){
+                    Thread.currentThread().interrupt();
+                }
+
                 System.out.println("What list would you like to remove a vinyl from?");
                 System.out.println("");
                 System.out.println("1) Want List");
@@ -166,11 +204,23 @@ public class Main{
 
                     if (userConfirm.equals("Y")){
                         wantList.remove(v - 1);
-                        System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
+                        System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!\nNow Returning to Main Menu...");
+                        try{
+                            Thread.sleep(1000);
+                        }
+                        catch (InterruptedException e){
+                            Thread.currentThread().interrupt();
+                        }
                     }
 
                     else if (userConfirm.equals("N")){
-                        System.out.println("This vinyl will NOT be removed!");
+                        System.out.println("This vinyl will NOT be removed!\nReturning to Main Menu...");
+                        try{
+                            Thread.sleep(1000);
+                        }
+                        catch (InterruptedException e){
+                            Thread.currentThread().interrupt();
+                        }
                     }
 
                     else
@@ -179,6 +229,14 @@ public class Main{
                 
                 else if (userRemove.equals("2")){
                     System.out.println("Loading Have List...");
+
+                    try{
+                        Thread.sleep(1000);
+                    }
+                    catch (InterruptedException e){
+                        Thread.currentThread().interrupt();
+                    }
+
                     for (int v = 0; v < haveList.size(); v++){
                         System.out.println((v + 1) + ". " + haveList.get(v));
                     }
