@@ -117,20 +117,14 @@ public class Main{
                 String status = "";
 
                 if (userAdd.equals("1")){
-                    System.out.println("Want List Loading...");
-                    System.out.println("");
                     status = "Want";
                 }
 
                 else if (userAdd.equals("2")){
-                    System.out.println("Have List Loading...");
-                    System.out.println("");
                     status = "Have";
                 }
 
                 else if (userAdd.equals("3")){
-                    System.out.println("Favorites List Loading...");
-                    System.out.println("");
                     status = "Favorite";
                 }
 
@@ -189,7 +183,6 @@ public class Main{
                 String userRemove = input.nextLine();
 
                 if (userRemove.equals("1")){
-                    System.out.println("Loading Want List...");
                     for (int v = 0; v < wantList.size(); v++){
                         System.out.println((v + 1) + ". " + wantList.get(v));
                     }
@@ -228,14 +221,6 @@ public class Main{
                 }
                 
                 else if (userRemove.equals("2")){
-                    System.out.println("Loading Have List...");
-
-                    try{
-                        Thread.sleep(1000);
-                    }
-                    catch (InterruptedException e){
-                        Thread.currentThread().interrupt();
-                    }
 
                     for (int v = 0; v < haveList.size(); v++){
                         System.out.println((v + 1) + ". " + haveList.get(v));
@@ -264,7 +249,7 @@ public class Main{
                 }
 
                 else if (userRemove.equals("3")){
-                    System.out.println("Loading Favorites List...");
+
                     for (int v = 0; v < favList.size(); v++){
                         System.out.println((v + 1) + ". " + favList.get(v));
                 }
