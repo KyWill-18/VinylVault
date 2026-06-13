@@ -23,7 +23,15 @@ public class VinylCollection {
         }
     }
 
-    public void removeVinyl(Vinyl vinyl){
-
+    public void removeVinyl(String listChoice, int index){
+        if (listChoice.equals("1")){
+            wantList.remove(index);
+        }
+        else if (listChoice.equals("2")){
+            haveList.remove(index);
+        }
+        else if (listChoice.equals("3")){
+            favList.remove(index);
+        }
     }
 }
