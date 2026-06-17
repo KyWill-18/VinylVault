@@ -6,17 +6,15 @@ public class Main{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         //collection of three list each vinyl will be sorted into
-        ArrayList<Vinyl> wantList = new ArrayList<>();
-        ArrayList<Vinyl> haveList = new ArrayList<>();
-        ArrayList<Vinyl> favList = new ArrayList<>();
+        VinylCollection collection = new VinylCollection();
 
         //Hardcoded for testing
-        wantList.add(new Vinyl("For Cryin' Out Loud!", "FINNEAS", "2024", "Alt", "Want"));
-        wantList.add(new Vinyl("Sunburn", "Dominic Fike", "2023", "Alt", "Want"));
-        haveList.add(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Have"));
-        haveList.add(new Vinyl("Swimming", "Mac Miller", "2018", "Rap", "Have"));
-        favList.add(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Fav"));
-        favList.add(new Vinyl("Blonde", "Frank Ocean", "2016", "Pop", "Fav"));
+        collection.addVinyl(new Vinyl("For Cryin' Out Loud!", "FINNEAS", "2024", "Alt", "Want"));
+        collection.addVinyl(new Vinyl("Sunburn", "Dominic Fike", "2023", "Alt", "Want"));
+        collection.addVinyl(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Have"));
+        collection.addVinyl(new Vinyl("Swimming", "Mac Miller", "2018", "Rap", "Have"));
+        collection.addVinyl(new Vinyl("Hit Me Hard And Soft", "Billie Eilish", "2024", "Alt", "Fav"));
+        collection.addVinyl(new Vinyl("Blonde", "Frank Ocean", "2016", "Pop", "Fav"));
         boolean keepGoing = true;
 
         while(keepGoing){
@@ -49,8 +47,8 @@ public class Main{
                     Thread.currentThread().interrupt();
                 }
 
-                for (int v = 0; v < wantList.size(); v++){
-                    System.out.println((v + 1) + ". " + wantList.get(v));
+                for (int v = 0; v < collection.getWantList().size(); v++){
+                    System.out.println((v + 1) + ". " + collection.getWantList().get(v));
 
                 }
                 Scanner scanner = new Scanner(System.in);
@@ -69,8 +67,8 @@ public class Main{
                     Thread.currentThread().interrupt();
                 }
 
-                for (int v = 0; v < haveList.size(); v++){
-                    System.out.println((v + 1) + ". " + haveList.get(v));
+                for (int v = 0; v < collection.getHaveList().size(); v++){
+                    System.out.println((v + 1) + ". " + collection.getHaveList().get(v));
                 }
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Press ENTER to return to the Main Menu...");
@@ -88,8 +86,8 @@ public class Main{
                     Thread.currentThread().interrupt();
                 }
 
-                for (int v = 0; v < favList.size(); v++){
-                    System.out.println((v + 1) + ". " + favList.get(v));
+                for (int v = 0; v < collection.getFavList().size(); v++){
+                    System.out.println((v + 1) + ". " + collection.getFavList().get(v));
                 }
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Press ENTER to return to the Main Menu...");
