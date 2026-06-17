@@ -146,17 +146,7 @@ public class Main{
 
                 Vinyl newVinyl = new Vinyl(title, artist, year, genre, status);
 
-                if (status.equals("Want")){
-                    wantList.add(newVinyl);
-                }
-
-                else if (status.equals("Have")){
-                    haveList.add(newVinyl);
-                }
-
-                else if (status.equals("Favorite")){ 
-                    favList.add(newVinyl);
-                }
+                collection.addVinyl(newVinyl);
 
                 System.out.println(title + " by " + artist + " has been added to your " + status + " list! ");
 
@@ -182,20 +172,20 @@ public class Main{
                 String userRemove = input.nextLine();
 
                 if (userRemove.equals("1")){
-                    for (int v = 0; v < wantList.size(); v++){
-                        System.out.println((v + 1) + ". " + wantList.get(v));
+                    for (int v = 0; v < collection.getWantList().size(); v++){
+                        System.out.println((v + 1) + ". " + collection.getWantList().get(v));
                     }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
 
                     int v = remove.nextInt();
-                    Vinyl Removed = wantList.get(v - 1);
+                    Vinyl Removed = collection.getWantList().get(v - 1);
 
                     System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
                     if (userConfirm.equals("Y")){
-                        wantList.remove(v - 1);
+                        collection.removeVinyl(userRemove, v - 1);
                         System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!\nNow Returning to Main Menu...");
                         try{
                             Thread.sleep(1000);
@@ -221,20 +211,20 @@ public class Main{
                 
                 else if (userRemove.equals("2")){
 
-                    for (int v = 0; v < haveList.size(); v++){
-                        System.out.println((v + 1) + ". " + haveList.get(v));
+                    for (int v = 0; v < collection.getHaveList().size(); v++){
+                        System.out.println((v + 1) + ". " + collection.getHaveList().get(v));
                     }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
 
                     int v = remove.nextInt();
-                    Vinyl Removed = haveList.get(v - 1);
+                    Vinyl Removed = collection.getHaveList().get(v - 1);
 
                     System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
                     if (userConfirm.equals("Y")){
-                        haveList.remove(v - 1);
+                        collection.removeVinyl(userRemove, v - 1);
                         System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
                     }
 
@@ -249,20 +239,20 @@ public class Main{
 
                 else if (userRemove.equals("3")){
 
-                    for (int v = 0; v < favList.size(); v++){
-                        System.out.println((v + 1) + ". " + favList.get(v));
+                    for (int v = 0; v < collection.getFavList().size(); v++){
+                        System.out.println((v + 1) + ". " + collection.getFavList().get(v));
                 }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
 
                     int v = remove.nextInt();
-                    Vinyl Removed = favList.get(v - 1);
+                    Vinyl Removed = collection.getFavList().get(v - 1);
 
                     System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
                     if (userConfirm.equals("Y")){
-                        favList.remove(v - 1);
+                        collection.removeVinyl(userRemove, v - 1);
                         System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
                     }
 
