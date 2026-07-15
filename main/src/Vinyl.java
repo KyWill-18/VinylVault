@@ -39,3 +39,5 @@ public class Vinyl {
         return title + " by " + artist + " Released: " + year + " Genre: " + genre;
     } 
 }
+
+
