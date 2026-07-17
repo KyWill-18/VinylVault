@@ -26,6 +26,7 @@ public class Main{
             String userChoice = input.nextLine();
 
             if (userChoice.equals("0")){
+                VinylStorage.saveVinyl(collection, "collection.json");
                 System.out.println("Goodbye!");
                 keepGoing = false;
             }

@@ -9,6 +9,16 @@ public class VinylCollection {
     public ArrayList<Vinyl> getHaveList() { return haveList; }
     public ArrayList<Vinyl> getFavList() { return favList; }
 
+    public ArrayList<Vinyl> getAllVinyls(){
+        ArrayList<Vinyl> all = new ArrayList<>();
+
+        all.addAll(wantList);
+        all.addAll(haveList);
+        all.addAll(favList);
+
+        return all;
+    }
+
     public void addVinyl(Vinyl vinyl){
         if (vinyl.getStatus().equals("Want")){
             wantList.add(vinyl);
