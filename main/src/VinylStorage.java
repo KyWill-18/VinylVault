@@ -14,7 +14,7 @@ public class VinylStorage {
         try(FileOutputStream fos = new FileOutputStream(fileName);
             OutputStreamWriter isr = new OutputStreamWriter(fos, StandardCharsets.UTF_8)){
 
-            Gson gson = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
             gson.toJson(collection.getAllVinyls(), isr);
 
