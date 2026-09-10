@@ -24,6 +24,7 @@ public class Main{
             System.out.println("3) View Favorite List");
             System.out.println("4) Add Vinyl");
             System.out.println("5) Remove Vinyl");
+            System.out.println("6) Move Vinyl");
 
             String userChoice = input.nextLine();
 
@@ -91,6 +92,7 @@ public class Main{
                 scanner.nextLine();
                 
             }
+
             //add vinyl
             else if (userChoice.equals("4")){
                 System.out.println("Adding Vinyl...");
@@ -149,13 +151,12 @@ public class Main{
 
             }
             //remove vinyl
-            else if (userChoice.equals("5")){
+            else if (userChoice.equals("5")) {
                 System.out.println("Removing Vinyl...");
 
-                try{
+                try {
                     Thread.sleep(1000);
-                }
-                catch (InterruptedException e){
+                } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
 
@@ -167,8 +168,8 @@ public class Main{
 
                 String userRemove = input.nextLine();
 
-                if (userRemove.equals("1")){
-                    for (int v = 0; v < collection.getWantList().size(); v++){
+                if (userRemove.equals("1")) {
+                    for (int v = 0; v < collection.getWantList().size(); v++) {
                         System.out.println((v + 1) + ". " + collection.getWantList().get(v));
                     }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
@@ -180,34 +181,26 @@ public class Main{
                     System.out.println("Are you sure you want to remove " + removed.getTitle() + " by " + removed.getArtist() + " from your " + removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
-                    if (userConfirm.equals("Y")){
+                    if (userConfirm.equals("Y")) {
                         collection.removeVinyl(userRemove, v - 1);
                         System.out.println(removed.getTitle() + " by " + removed.getArtist() + " has been removed from your " + removed.getStatus() + " list!\nNow Returning to Main Menu...");
-                        try{
+                        try {
                             Thread.sleep(1000);
-                        }
-                        catch (InterruptedException e){
+                        } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                         }
-                    }
-
-                    else if (userConfirm.equals("N")){
+                    } else if (userConfirm.equals("N")) {
                         System.out.println("This vinyl will NOT be removed!\nReturning to Main Menu...");
-                        try{
+                        try {
                             Thread.sleep(1000);
-                        }
-                        catch (InterruptedException e){
+                        } catch (InterruptedException e) {
                             Thread.currentThread().interrupt();
                         }
-                    }
-
-                    else
+                    } else
                         System.out.println("INVALID INPUT!");
-                }
-                
-                else if (userRemove.equals("2")){
+                } else if (userRemove.equals("2")) {
 
-                    for (int v = 0; v < collection.getHaveList().size(); v++){
+                    for (int v = 0; v < collection.getHaveList().size(); v++) {
                         System.out.println((v + 1) + ". " + collection.getHaveList().get(v));
                     }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
@@ -219,25 +212,19 @@ public class Main{
                     System.out.println("Are you sure you want to remove " + Removed.getTitle() + " by " + Removed.getArtist() + " from your " + Removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
-                    if (userConfirm.equals("Y")){
+                    if (userConfirm.equals("Y")) {
                         collection.removeVinyl(userRemove, v - 1);
                         System.out.println(Removed.getTitle() + " by " + Removed.getArtist() + " has been removed from your " + Removed.getStatus() + " list!");
-                    }
-
-                    else if (userConfirm.equals("N")){
+                    } else if (userConfirm.equals("N")) {
                         System.out.println("This vinyl will NOT be removed!");
-                    }
-
-                    else
+                    } else
                         System.out.println("INVALID INPUT!");
 
-                }
+                } else if (userRemove.equals("3")) {
 
-                else if (userRemove.equals("3")){
-
-                    for (int v = 0; v < collection.getFavList().size(); v++){
+                    for (int v = 0; v < collection.getFavList().size(); v++) {
                         System.out.println((v + 1) + ". " + collection.getFavList().get(v));
-                }
+                    }
                     System.out.println("Input the number of the vinyl you would like to remove: ");
                     Scanner remove = new Scanner(System.in);
 
@@ -247,17 +234,30 @@ public class Main{
                     System.out.println("Are you sure you want to remove " + removed.getTitle() + " by " + removed.getArtist() + " from your " + removed.getStatus() + " list? (Y/N)");
                     String userConfirm = input.nextLine();
 
-                    if (userConfirm.equals("Y")){
+                    if (userConfirm.equals("Y")) {
                         collection.removeVinyl(userRemove, v - 1);
                         System.out.println(removed.getTitle() + " by " + removed.getArtist() + " has been removed from your " + removed.getStatus() + " list!");
-                    }
-
-                    else if (userConfirm.equals("N")){
+                    } else if (userConfirm.equals("N")) {
                         System.out.println("This vinyl will NOT be removed!");
+                    } else
+                        System.out.println("INVALID INPUT!");
+                }
+            }
+
+            //move vinyl
+            else if (userChoice.equals("6")){
+                System.out.println("Moving vinyl...");
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
                     }
 
-                    else
-                        System.out.println("INVALID INPUT!");
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Press ENTER to return to the Main Menu...");
+
+                    scanner.nextLine();
             }
             
             else{
@@ -268,5 +268,3 @@ public class Main{
 
         }
     }
-
-}
