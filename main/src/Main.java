@@ -8,6 +8,8 @@ public class Main{
 
         VinylCollection collection = new VinylCollection();
 
+        VinylStorage.loadVinyl(collection, "collection.json");
+
         boolean keepGoing = true;
 
         while(keepGoing){
