@@ -254,6 +254,96 @@ public class Main{
                         Thread.currentThread().interrupt();
                     }
 
+                System.out.println("What list would you like to move FROM?");
+                System.out.println("");
+                System.out.println("1) Want List");
+                System.out.println("2) Have List");
+                System.out.println("3) Favorites List");
+
+                String userMoveFrom = input.nextLine();
+
+                if (userMoveFrom.equals("1")) {
+                    for (int v = 0; v < collection.getWantList().size(); v++) {
+                        System.out.println((v + 1) + ". " + collection.getWantList().get(v));
+                    }
+                    System.out.println("Input the number of the vinyl you want to move: ");
+                    Scanner move = new Scanner(System.in);
+
+                    int v = move.nextInt();
+                    Vinyl moved = collection.getWantList().get(v - 1);
+
+                    System.out.println("What list would you like to move this vinyl to? ");
+                    System.out.println("");
+                    System.out.println("1) Have List");
+                    System.out.println("2) Fav List");
+
+                    String userMoveTo = input.nextLine();
+
+                    if (userMoveTo.equals("1")){
+                        //move vinyl to have list
+                    }
+                    else if (userMoveTo.equals("2")){
+                        //move vinyl to fav list
+                    }
+                    else
+                        System.out.println("INVALID INPUT!");
+                }
+
+                if (userMoveFrom.equals("2")){
+                    for (int v = 0; v < collection.getHaveList().size(); v++){
+                        System.out.println((v + 1) + ". " + collection.getHaveList().get(v));
+                    }
+                    System.out.println("Input the number of the vinyl you want to move ");
+                    Scanner move = new Scanner(System.in);
+
+                    int v = move.nextInt();
+                    Vinyl moved = collection.getHaveList().get(v - 1);
+
+                    System.out.println("What list would you like to move this vinyl to? ");
+                    System.out.println("");
+                    System.out.println("1) Want List");
+                    System.out.println("2) Fav List");
+
+                    String userMoveTo = input.nextLine();
+
+                    if (userMoveTo.equals("1")){
+                        //move vinyl to want list
+                    }
+                    else if (userMoveTo.equals("2")){
+                        //move vinyl to fav list
+                    }
+                    else
+                        System.out.println("INVALID INPUT!");
+                }
+
+                if (userMoveFrom.equals("3")){
+                    for (int v = 0; v < collection.getFavList().size(); v++){
+                        System.out.println((v + 1) + ". " + collection.getFavList().get(v));
+                    }
+                    System.out.println("Input the number of the vinyl you want to move ");
+                    Scanner move = new Scanner(System.in);
+
+                    int v = move.nextInt();
+                    Vinyl moved = collection.getFavList().get(v - 1);
+
+                    System.out.println("What list would you like to move this vinyl to? ");
+                    System.out.println("");
+                    System.out.println("1) Want List");
+                    System.out.println("2) Have List");
+
+                    String userMoveTo = input.nextLine();
+
+                    if (userMoveTo.equals("1")){
+                        //move vinyl to want list
+                    }
+                    else if (userMoveTo.equals("2")){
+                        //move vinyl to have list
+                    }
+                    else
+                        System.out.println("INVALID INPUT!");
+                }
+
+
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("Press ENTER to return to the Main Menu...");
 
