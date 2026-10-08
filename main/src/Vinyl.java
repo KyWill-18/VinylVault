@@ -33,11 +33,15 @@ public class Vinyl {
     public String getStatus(){
         return status;
     }
+    public void setStatus(String newStatus){
+        this.status = newStatus;
+    }
 
     @Override
     public String toString(){
         return title + " by " + artist + " Released: " + year + " Genre: " + genre;
-    } 
+    }
+
 }
 
 

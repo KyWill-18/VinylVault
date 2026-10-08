@@ -262,6 +262,7 @@ public class Main{
 
                 String userMoveFrom = input.nextLine();
 
+                // move FROM wantList
                 if (userMoveFrom.equals("1")) {
                     for (int v = 0; v < collection.getWantList().size(); v++) {
                         System.out.println((v + 1) + ". " + collection.getWantList().get(v));
@@ -279,17 +280,55 @@ public class Main{
 
                     String userMoveTo = input.nextLine();
 
+                    // move FROM wantList TO haveList
                     if (userMoveTo.equals("1")){
-                        //move vinyl to have list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+                        String userConfirm = input.nextLine();
+                            if (userConfirm.equals("Y")) {
+                                collection.removeVinyl(userMoveFrom, v - 1);
+                                moved.setStatus("Have");
+                                collection.addVinyl(moved);
+                                System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Have List!");
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    Thread.currentThread().interrupt();
+                                }
+                            }
+                            else if (userConfirm.equals("N")){
+                                System.out.println("This vinyl will NOT be moved!");
+                                try {
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    Thread.currentThread().interrupt();
+                                }
+                            }else
+                                System.out.println("INVALID INPUT!");
                     }
+                    // move FROM wantList TO favList
                     else if (userMoveTo.equals("2")){
-                        //move vinyl to fav list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+
+                        String userConfirm = input.nextLine();
+
+                        if (userConfirm.equals("Y")) {
+                            collection.removeVinyl(userMoveFrom, v - 1);
+                            moved.setStatus("Favorite");
+                            collection.addVinyl(moved);
+                            System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Fav List!");
+
+                        }
+                            else if (userConfirm.equals("N")){
+                            System.out.println("This vinyl will NOT be moved!");
+                        }else
+                            System.out.println("INVALID INPUT!");
                     }
                     else
                         System.out.println("INVALID INPUT!");
                 }
 
-                if (userMoveFrom.equals("2")){
+                // move FROM haveList
+                else if (userMoveFrom.equals("2")){
                     for (int v = 0; v < collection.getHaveList().size(); v++){
                         System.out.println((v + 1) + ". " + collection.getHaveList().get(v));
                     }
@@ -299,6 +338,7 @@ public class Main{
                     int v = move.nextInt();
                     Vinyl moved = collection.getHaveList().get(v - 1);
 
+
                     System.out.println("What list would you like to move this vinyl to? ");
                     System.out.println("");
                     System.out.println("1) Want List");
@@ -306,17 +346,62 @@ public class Main{
 
                     String userMoveTo = input.nextLine();
 
+                    // move FROM haveList TO wantList
                     if (userMoveTo.equals("1")){
-                        //move vinyl to want list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+                        String userConfirm = input.nextLine();
+                        if (userConfirm.equals("Y")) {
+                            collection.removeVinyl(userMoveFrom, v - 1);
+                            moved.setStatus("Want");
+                            collection.addVinyl(moved);
+                            System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Want List!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+                        else if (userConfirm.equals("N")){
+                            System.out.println("This vinyl will NOT be moved!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }else
+                            System.out.println("INVALID INPUT!");
                     }
+                    // move FROM havelist TO favList
                     else if (userMoveTo.equals("2")){
-                        //move vinyl to fav list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+                        String userConfirm = input.nextLine();
+                        if (userConfirm.equals("Y")) {
+                            collection.removeVinyl(userMoveFrom, v - 1);
+                            moved.setStatus("Favorite");
+                            collection.addVinyl(moved);
+                            System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Favorite List!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+                        else if (userConfirm.equals("N")){
+                            System.out.println("This vinyl will NOT be moved!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }else
+                            System.out.println("INVALID INPUT!");
                     }
                     else
                         System.out.println("INVALID INPUT!");
                 }
 
-                if (userMoveFrom.equals("3")){
+                // move FROM favList
+                else if (userMoveFrom.equals("3")){
                     for (int v = 0; v < collection.getFavList().size(); v++){
                         System.out.println((v + 1) + ". " + collection.getFavList().get(v));
                     }
@@ -333,11 +418,55 @@ public class Main{
 
                     String userMoveTo = input.nextLine();
 
+                    // move FROM favList TO wantList
                     if (userMoveTo.equals("1")){
-                        //move vinyl to want list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+                        String userConfirm = input.nextLine();
+                        if (userConfirm.equals("Y")) {
+                            collection.removeVinyl(userMoveFrom, v - 1);
+                            moved.setStatus("Want");
+                            collection.addVinyl(moved);
+                            System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Want List!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+                        else if (userConfirm.equals("N")){
+                            System.out.println("This vinyl will NOT be moved!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }else
+                            System.out.println("INVALID INPUT!");
                     }
+                    // move FROM favList TO haveList
                     else if (userMoveTo.equals("2")){
-                        //move vinyl to have list
+                        System.out.println("Are you sure you want to move " + moved.getTitle() + " by " + moved.getArtist() + " from your " + moved.getStatus() + " list? (Y/N)");
+                        String userConfirm = input.nextLine();
+                        if (userConfirm.equals("Y")) {
+                            collection.removeVinyl(userMoveFrom, v - 1);
+                            moved.setStatus("Have");
+                            collection.addVinyl(moved);
+                            System.out.println(moved.getTitle() + " by " + moved.getArtist() + " has been moved to your Have List!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }
+                        else if (userConfirm.equals("N")){
+                            System.out.println("This vinyl will NOT be moved!");
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                        }else
+                            System.out.println("INVALID INPUT!");
                     }
                     else
                         System.out.println("INVALID INPUT!");
@@ -352,7 +481,6 @@ public class Main{
             
             else{
                 System.out.println("INVALID INPUT!");
-                keepGoing = false;
             }
         }
 
