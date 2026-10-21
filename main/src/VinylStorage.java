@@ -44,7 +44,7 @@ public class VinylStorage {
             }
         }
         catch (FileNotFoundException e){
-            throw new RuntimeException(e);
+            System.out.println("No File Found! A New Collection File Will Be Created After You Exit");
 
         }
         catch (IOException e){
