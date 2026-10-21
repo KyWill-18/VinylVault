@@ -39,8 +39,10 @@ public class VinylStorage {
 
             ArrayList<Vinyl> loadedVinyls = gson.fromJson(reader, vinylListType);
 
-            for (Vinyl vinyl : loadedVinyls){
-                collection.addVinyl(vinyl);
+            if (loadedVinyls != null){
+                for (Vinyl vinyl : loadedVinyls){
+                    collection.addVinyl(vinyl);
+                }
             }
         }
         catch (FileNotFoundException e){
